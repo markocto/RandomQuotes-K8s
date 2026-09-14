@@ -58,7 +58,7 @@ jobs:
             - name: update kustomize overlay             
               uses: mikefarah/yq@master              
               with:
-                cmd: yq -i '.images.[0].newTag = "${{ env.GitVersion_SemVer }}"' | .images.[0].newName = "${{ secrets.DOCKERHUB_REPO }}"'k8s/overlays/${{ github.ref == 'refs/heads/main' && 'test' || 'dev' }}/kustomization.yaml'              
+                cmd: yq -i '.images.[0].newTag = "${{ env.GitVersion_SemVer }}" | .images.[0].newName = "${{ secrets.DOCKERHUB_REPO }}"' 'k8s/overlays/${{ github.ref == 'refs/heads/main' && 'test' || 'dev' }}/kustomization.yaml'              
             - id: commit_kustomize_change
               name: commit kustomize change
               run : |
