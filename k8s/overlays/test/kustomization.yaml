@@ -6,7 +6,7 @@ resources:
 images:
   - name: bobjwalker99/randomquotes-k8s
     newName: dukeofchutney/images
-    newTag: "0.1.102"
+    newTag: "1stimage"
 patches:
   - target:
       kind: Ingress
